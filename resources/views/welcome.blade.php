@@ -14,15 +14,20 @@
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                display: table;
+                display: flex;
+                flex-direction: column;
                 font-weight: 100;
                 font-family: 'Lato';
             }
 
+            .header {
+                display: flex;
+                justify-content: center;
+            }
+
             .container {
                 text-align: center;
-                display: table-cell;
-                vertical-align: middle;
+                justify-content: center;
             }
 
             .content {
@@ -36,10 +41,14 @@
         </style>
     </head>
     <body>
-        <div class="container">
+        <header class="header">
+            <h1>@yield('title')</h1>
+        </header>
+
+        <main class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                @yield('content')
             </div>
-        </div>
+        </main>
     </body>
 </html>

@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $site_title = 'My Fitness Buddy';
+    return view('home', compact('site_title'));
 });

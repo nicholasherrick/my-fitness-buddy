@@ -11,7 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    $site_title = 'My Fitness Buddy';
-    return view('home', compact('site_title'));
-});
+Route::get('/', 'HomeController@index');

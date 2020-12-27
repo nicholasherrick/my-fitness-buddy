@@ -1,54 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.app')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Welcome</div>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .header {
-                display: flex;
-                justify-content: center;
-            }
-
-            .container {
-                text-align: center;
-                justify-content: center;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <header class="header">
-            <h1>@yield('title')</h1>
-        </header>
-
-        <main class="container">
-            <div class="content">
-                @yield('content')
+                <div class="panel-body">
+                    Your Application's Landing Page.
+                </div>
             </div>
-        </main>
-    </body>
-</html>
+        </div>
+    </div>
+</div>
+@endsection

@@ -8,11 +8,13 @@
                 <div class="panel-heading">Create Meal</div>
 
                 <div class="panel-body">
-                    <form action="submit">
+                    <form action="/meals" method="post">
                         <label for="name">Name</label>
                         <input type="text" name="name">
                         
                         <button type="submit">Create</button>
+
+                        {{ csrf_field() }}
                     </form>
                 </div>
             </div>

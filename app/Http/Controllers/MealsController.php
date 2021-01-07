@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use Auth;
 
+use DB;
+
 use App\Meal;
 
 class MealsController extends Controller
@@ -20,9 +22,11 @@ class MealsController extends Controller
     public function index()
     {
         if (Auth::check()) {
-        return view('meals.all');
+            $meals = DB::table('meals')->get();
+
+            return view('meals.all', ['meals' => $meals]);
         }
-        return view('auth.login');
+            return view('auth.login');
     }
 
     /**
@@ -51,7 +55,8 @@ class MealsController extends Controller
         $meal = new Meal();
         $meal->name = $request['name'];
         $request->user()->meals()->save($meal);
-        return redirect()->route('home');
+        // return redirect('/meals');
+        return back()->withInput();
     }
     /**
      * Display the specified resource.

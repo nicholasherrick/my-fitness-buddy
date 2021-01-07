@@ -23,6 +23,10 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        a {
+            color: black;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -48,6 +52,8 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/meals/create') }}">Add Meal</a></li>
+                    <li><a href="{{ url('/meals') }}">All Meals</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

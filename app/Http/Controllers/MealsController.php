@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Auth;
+
 use App\Meal;
 
 class MealsController extends Controller
@@ -17,7 +19,10 @@ class MealsController extends Controller
      */
     public function index()
     {
+        if (Auth::check()) {
         return view('meals.all');
+        }
+        return view('auth.login');
     }
 
     /**
@@ -27,7 +32,10 @@ class MealsController extends Controller
      */
     public function create()
     {
+        if (Auth::check()) {
         return view('meals.create');
+        }
+        return view('auth.login');
     }
 
     /**

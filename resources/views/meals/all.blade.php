@@ -9,7 +9,9 @@
                 <ul>
                     @foreach(Auth::user()->meals as $meal)
                     <li>
-                        {{ $meal->name }}
+                        {{ $meal->name }} created 
+                        {{ $meal->created_at->format('j F, Y') }}
+
                     </li>
                     @endforeach
                 </ul>

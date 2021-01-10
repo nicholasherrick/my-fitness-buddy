@@ -66,7 +66,10 @@ class MealsController extends Controller
      */
     public function show($id)
     {
-        //
+        if (Auth::check()) {
+            return view('meals.details')->withMeal(Meal::find($id));
+        }
+        
     }
 
     /**

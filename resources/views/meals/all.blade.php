@@ -9,7 +9,7 @@
                 <ul>
                     @foreach(Auth::user()->meals as $meal)
                     <li>
-                        {{ $meal->name }} created 
+                        <a href="/meals/{{ $meal->id }}">{{ $meal->name }}</a> created 
                         {{ $meal->created_at->format('j F, Y') }}
 
                     </li>
